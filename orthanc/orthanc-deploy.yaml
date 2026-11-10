@@ -269,17 +269,17 @@ spec:
     spec:
       containers:
         - name: orthanc-wrapper
-          image: harbor.eucaim.cancerimage.eu/library/orthanc/node:22.16.0
-          command:
-            - /node_data/init_node.sh
+          image: harbor.eucaim.cancerimage.eu/library/orthanc/wrapper:0.2
+          #command:
+          #  - /node_data/init_node.sh
           ports:
             - containerPort: 8080
               protocol: TCP
-          volumeMounts:
-            - name: orthanc-wrapper
-              mountPath: /node_data
-      volumes:
-        - name: orthanc-wrapper
+          #volumeMounts:
+          #  - name: orthanc-wrapper
+          #    mountPath: /node_data
+      #volumes:
+      #  - name: orthanc-wrapper
           persistentVolumeClaim:
             claimName: orthanc-wrapper-pvc
 ---
