@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orthanc-wrapper-app
+  namespace: orthanc
+data:
+  app.json: |
+    // http://pm2.keymetrics.io/docs/usage/application-declaration
+    {
+      "apps" : [{
+        "name"        : "Orthanc Wrapper",
+        "script"      : "bundle/main.js",
+        "error_file"  : "error.log",
+        "out_file"    : "out.log",
+        "env": {
+          "ROOT_URL": "https://TU_PUBLIC_DOMAIN/wrapper",
+          "PORT": "8080",
+          "METEOR_SETTINGS": '{\
+            "public": {\
+              "domainURL": "https://TU_PUBLIC_DOMAIN"\
+            },\
+            "private": {}\
+          }'
+        }
+      }]
+    }
