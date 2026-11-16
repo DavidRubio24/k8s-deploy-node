@@ -105,6 +105,10 @@ data:
             "upload"
           ]
         },
+        "admin": {
+          "authorized-labels": ["*"],
+          "permissions": ["all"]
+        },
         "doctor-role": {
           "authorized-labels": ["*"],
           "permissions": ["view", "download", "share", "send"]
