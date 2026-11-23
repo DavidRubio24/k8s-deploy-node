@@ -68,7 +68,7 @@ spec:
     spec:
       containers:
       - name: auth-service
-        image: orthancteam/orthanc-auth-service:main
+        image: orthancteam/orthanc-auth-service:26.11.2
         env:
         - name: SECRET_KEY
           valueFrom:
